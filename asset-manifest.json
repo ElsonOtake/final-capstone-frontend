@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/%7Brepo-name%7D/static/css/main.ad3f1794.css",
+    "main.js": "/%7Brepo-name%7D/static/js/main.addd5dc8.js",
+    "static/media/booking_bg.jpg": "/%7Brepo-name%7D/static/media/booking_bg.02186a3c01aaa6b57ed2.jpg",
+    "static/media/about_bg.jpg": "/%7Brepo-name%7D/static/media/about_bg.6b959c83015788ac8e24.jpg",
+    "static/media/logo.png": "/%7Brepo-name%7D/static/media/logo.88440a32e91752814770.png",
+    "static/media/bg.jpg": "/%7Brepo-name%7D/static/media/bg.3cc0deb8177a59b8f436.jpg",
+    "static/media/slick.svg": "/%7Brepo-name%7D/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/%7Brepo-name%7D/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/%7Brepo-name%7D/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/%7Brepo-name%7D/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/%7Brepo-name%7D/index.html",
+    "main.ad3f1794.css.map": "/%7Brepo-name%7D/static/css/main.ad3f1794.css.map",
+    "main.addd5dc8.js.map": "/%7Brepo-name%7D/static/js/main.addd5dc8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ad3f1794.css",
+    "static/js/main.addd5dc8.js"
+  ]
+}
