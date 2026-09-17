@@ -199,7 +199,7 @@ h1 {
   padding: 0;
 
   td {
-    padding: calc($padding/2) $padding;
+    padding: calc($padding / 2) $padding;
   }
 
   tr:nth-child(even) {
@@ -335,13 +335,13 @@ h1 {
 
   td {
     border: 1px solid $color-silver;
-    padding: $padding/2;
+    padding: calc($padding / 2);
   }
 
   th {
     background-color: $color-silver;
     border: 1px solid $color-silver;
-    padding: $padding/2;
+    padding: calc($padding / 2);
   }
 }
 
