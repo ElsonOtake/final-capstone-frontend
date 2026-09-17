@@ -19,7 +19,7 @@ In this project, we created a website for renting exotic cars (exo-cars). It fet
 
 ### Live demo
 
-[EXO-CARS](https://final-capstone-frontend-fkvzig4w0-elsonotake.vercel.app/login)
+[EXO-CARS](https://final-capstone-frontend-mocha.vercel.app/)
 
 ### Install
 
@@ -44,25 +44,25 @@ To view this document on your local computer:
 👤 **Gonzalo A. Medina**
 
 - GitHub: [@mgmediaweb](https://github.com/mgmediaweb)
-- Twitter: [@GonzoMedinaDev](https://twitter.com/GonzoMedinaDev)
+- X: [@GonzoMedinaDev](https://x.com/GonzoMedinaDev)
 - LinkedIn: [gonzalo-medina-g](https://www.linkedin.com/in/gonzalo-medina-g/)
 
 👤 **Giuseppe Tomasini**
 
 - GitHub: [@GiuseppeTG](https://github.com/GiuseppeTG)
-- Twitter: [@giusetomasini](https://twitter.com/giusetomasini)
+- X: [@giusetomasini](https://x.com/giusetomasini)
 - LinkedIn: [Giuseppe Tomasini](https://www.linkedin.com/in/giuseppe-tomasini-g/)
 
 👤 **Elson Otake**
 
 - GitHub: [elsonotake](https://github.com/elsonotake)
-- Twitter: [@elsonotake](https://twitter.com/elsonotake)
+- X: [@elsonotake](https://x.com/elsonotake)
 - LinkedIn: [elsonotake](https://linkedin.com/in/elsonotake)
 
 👤 **Marco Antonio Hincapié Montes**
 
 - GitHub: [@AntonioHincapie](https://github.com/AntonioHincapie)
-- Twitter: [@MarcoHincapie](https://twitter.com/MarcoHincapie)
+- X: [@MarcoHincapie](https://x.com/MarcoHincapie)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/antoniohincapie/)
 
 ## 🤝 Contributing
