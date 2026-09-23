@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { FaTimes } from 'react-icons/fa';
 import './Booking.scss';
 import { useSelector } from 'react-redux';
+import { API_URL } from '../../config';
 
 const createDate = (dateStr) => {
   const dateArr = dateStr.split('-');
@@ -80,7 +81,7 @@ const Booking = (props) => {
       },
       body: JSON.stringify(postBody),
     };
-    await fetch(`https://elsonotake-exo-cars.onrender.com/api/v1/users/${user}/bookings`, postBooking);
+    await fetch(`${API_URL}/api/v1/users/${user}/bookings`, postBooking);
     window.location.href = '/models';
   };
 

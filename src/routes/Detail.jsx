@@ -9,7 +9,7 @@ import Button from '../components/button/Button';
 import Gallery from '../components/gallery/Gallery';
 
 const DetailScreen = () => {
-  const defaultImage = 'https://firebasestorage.googleapis.com/v0/b/exo-cars-5611d.appspot.com/o/empty_car.jpg?alt=media&token=952474fe-a836-4a2e-8576-6961aac8d7e3';
+  const defaultImage = 'https://placehold.co/600x400?text=No+Image';
   const { id } = useParams();
   const vehicles = useSelector((state) => state.vehicles);
 

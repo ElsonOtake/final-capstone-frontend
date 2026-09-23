@@ -1,3 +1,4 @@
+import { API_URL } from "../config";
 /* eslint linebreak-style: ["error", "windows"] */
 const AboutScreen = () => {
   const location = [
@@ -77,7 +78,7 @@ const AboutScreen = () => {
           <strong>
             See more details about our API, that was developed for this project on Ruby on Rails
             {' '}
-            <a href="https://elsonotake-exo-cars.onrender.com/api-docs/index.html" rel="noreferrer" target="_blank">here</a>
+            <a href={`${API_URL}/api-docs/index.html`} rel="noreferrer" target="_blank">here</a>
             .
           </strong>
         </p>

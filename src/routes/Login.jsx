@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useRef, useState } from 'react';
 import Button from '../components/button/Button';
 import './Login.scss';
+import { API_URL } from '../config';
 
 const LoginScreen = () => {
   const loginForm = useRef();
@@ -27,7 +28,7 @@ const LoginScreen = () => {
       ),
     };
 
-    const dataResponse = await fetch('https://elsonotake-exo-cars.onrender.com/api/v1/auth/login', requestOptions);
+    const dataResponse = await fetch(`${API_URL}/api/v1/auth/login`, requestOptions);
     if (dataResponse.ok) {
       const userData = await dataResponse.json();
       localStorage.setItem('current_user', JSON.stringify(userData));

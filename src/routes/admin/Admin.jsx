@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import UploadImages from '../../components/uploadimages/UploadImages';
 import Button from '../../components/button/Button';
+import { API_URL } from '../../config';
 
 const AdminScreen = () => {
   const vehicles = useSelector((state) => state.vehicles);
@@ -35,7 +36,7 @@ const AdminScreen = () => {
       },
     };
 
-    await fetch(`https://elsonotake-exo-cars.onrender.com/api/v1/vehicles/${vehicle.id}`, deleteCar);
+    await fetch(`${API_URL}/api/v1/vehicles/${vehicle.id}`, deleteCar);
     window.location.href = '/models';
   };
 

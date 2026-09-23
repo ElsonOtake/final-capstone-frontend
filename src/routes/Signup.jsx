@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../components/button/Button';
 import './Login.scss';
+import { API_URL } from '../config';
 
 const Signup = () => {
   const name = useRef();
@@ -29,7 +30,7 @@ const Signup = () => {
       ),
     };
 
-    await fetch('https://elsonotake-exo-cars.onrender.com/api/v1/users', signupOptions);
+    await fetch(`${API_URL}/api/v1/users`, signupOptions);
 
     const loginOptions = {
       method: 'POST',
@@ -42,7 +43,7 @@ const Signup = () => {
       ),
     };
 
-    const dataResponse = await fetch('https://elsonotake-exo-cars.onrender.com/api/v1/auth/login', loginOptions);
+    const dataResponse = await fetch(`${API_URL}/api/v1/auth/login`, loginOptions);
     if (dataResponse.ok) {
       const userData = await dataResponse.json();
       localStorage.setItem('current_user', JSON.stringify(userData));
