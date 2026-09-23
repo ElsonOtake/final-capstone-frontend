@@ -1,0 +1,14 @@
+src/routes/Home.jsx
+  h_da978aeed56e72 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c30493e8b6d95c16cb08b708fd2e4c7194e00ed5",
+  "prompts": {},
+  "humans": {
+    "h_da978aeed56e72": {
+      "author": "Elson Otake <elsonotake@yahoo.com.br>"
+    }
+  }
+}
