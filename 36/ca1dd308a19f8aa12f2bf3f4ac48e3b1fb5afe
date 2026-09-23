@@ -1,0 +1,18 @@
+src/redux/vehicles/vehicles.js
+  h_da978aeed56e72 1
+src/routes/About.jsx
+  h_da978aeed56e72 1
+src/redux/users/users.js
+  h_da978aeed56e72 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "36ca1dd308a19f8aa12f2bf3f4ac48e3b1fb5afe",
+  "prompts": {},
+  "humans": {
+    "h_da978aeed56e72": {
+      "author": "Elson Otake <elsonotake@yahoo.com.br>"
+    }
+  }
+}
