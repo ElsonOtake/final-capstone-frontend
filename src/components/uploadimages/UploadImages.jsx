@@ -9,10 +9,9 @@ import {
   FaCheck,
   FaTimes,
 } from 'react-icons/fa';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import storage from '../../Firebase';
 import './UploadImages.scss';
 import Button from '../button/Button';
+import { API_URL } from '../../config';
 
 const UploadImages = (props) => {
   const {
@@ -36,21 +35,29 @@ const UploadImages = (props) => {
 
   const goBack = () => setStatus('form');
 
-  const apiConnection = async (photoToPublish) => {
-    const body = { photo: photoToPublish };
-    const url = `https://elsonotake-exo-cars.onrender.com/api/v1/vehicles/${vehicle.id}/galleries`;
+  const apiConnection = async (file) => {
+    const formData = new FormData();
+    formData.append('photo_file', file);
 
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        Authorization: JSON.parse(localStorage.getItem('current_user')).token,
-      },
-      body: JSON.stringify(body),
-    });
+    const url = `${API_URL}/api/v1/vehicles/${vehicle.id}/galleries`;
 
-    if (response.status === 200) setStatus('success');
-    else setStatus('error');
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          Authorization: JSON.parse(localStorage.getItem('current_user')).token,
+          // No Content-Type here — the browser sets the multipart
+          // boundary automatically when the body is a FormData instance.
+        },
+        body: formData,
+      });
+
+      if (response.ok) setStatus('success');
+      else setStatus('error');
+    } catch (error) {
+      setStatus('error');
+    }
+
     setGallery(null);
   };
 
@@ -61,12 +68,7 @@ const UploadImages = (props) => {
     }
 
     setStatus('waiting');
-    const rnd = Math.round(Math.random() * (999 - 100) + 100);
-    const imageRef = ref(storage, `image${vehicle.id}_${rnd}`);
-
-    uploadBytes(imageRef, gallery)
-      .then((snapshot) => getDownloadURL(snapshot.ref))
-      .then((downloadURL) => apiConnection(downloadURL));
+    apiConnection(gallery);
   };
 
   const ScreenError = () => (

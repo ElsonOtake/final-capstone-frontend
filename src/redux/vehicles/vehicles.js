@@ -1,5 +1,6 @@
+import { API_URL } from '../../config';
 /* eslint linebreak-style: ["error", "windows"] */
-const url = 'https://elsonotake-exo-cars.onrender.com/api/v1/vehicles';
+const url = `${API_URL}/api/v1/vehicles`;
 
 // actions
 

@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint linebreak-style: ["error", "windows"] */
-import { React, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -11,7 +11,7 @@ import { getVehicles } from '../redux/vehicles/vehicles';
 import { getReservations } from '../redux/users/users';
 
 const Home = () => {
-  const defaultImage = 'https://firebasestorage.googleapis.com/v0/b/exo-cars-5611d.appspot.com/o/empty_car.jpg?alt=media&token=952474fe-a836-4a2e-8576-6961aac8d7e3';
+  const defaultImage = 'https://placehold.co/600x400?text=No+Image';
   const dispatch = useDispatch();
   const vehicles = useSelector((state) => state.vehicles);
 

@@ -3,6 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Form from '../../components/form/Form';
+import { API_URL } from '../../config';
 
 const NewScreen = () => {
   const formSubmit = async (e) => {
@@ -26,7 +27,7 @@ const NewScreen = () => {
       },
       body: JSON.stringify(postBody),
     };
-    await fetch('https://elsonotake-exo-cars.onrender.com/api/v1/vehicles', postItem);
+    await fetch(`${API_URL}/api/v1/vehicles`, postItem);
     window.location.href = '/models';
   };
 
