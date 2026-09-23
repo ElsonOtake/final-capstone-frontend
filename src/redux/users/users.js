@@ -1,4 +1,4 @@
-import { API_URL } from "../../config";
+import { API_URL } from '../../config';
 /* eslint linebreak-style: ["error", "windows"] */
 const url = `${API_URL}/api/v1/users`;
 
