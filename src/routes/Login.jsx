@@ -61,7 +61,7 @@ const LoginScreen = () => {
         <div className="add-padding-below">
           <input
             ref={password}
-            type="text"
+            type="password"
             id="password"
             name="password"
             className="form-field"
