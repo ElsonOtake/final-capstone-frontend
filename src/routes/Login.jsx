@@ -7,7 +7,7 @@ import { API_URL } from '../config';
 
 const LoginScreen = () => {
   const loginForm = useRef();
-  const name = useRef();
+  const email = useRef();
   const password = useRef();
 
   const [isActive, setActive] = useState(true);
@@ -22,7 +22,7 @@ const LoginScreen = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(
         {
-          name: name.current.value.trim(),
+          email: email.current.value.trim(),
           password: password.current.value,
         },
       ),
@@ -48,12 +48,12 @@ const LoginScreen = () => {
           <span className={isActive ? 'error-message' : 'error-message active'}>Error with credentials</span>
 
           <input
-            ref={name}
-            type="text"
-            id="name"
-            name="name"
+            ref={email}
+            type="email"
+            id="email"
+            name="email"
             className="form-field"
-            placeholder="Name"
+            placeholder="Email"
             required
           />
         </div>
