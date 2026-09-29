@@ -6,11 +6,11 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import {
   FaBars,
-  FaFacebookF,
-  FaGooglePlusG,
-  FaPinterestP,
+  FaMedium,
+  FaGithub,
+  FaLinkedinIn,
+  FaAngellist,
   FaTimes,
-  FaTwitter,
 } from 'react-icons/fa';
 import './Navbar.scss';
 import Button from '../button/Button';
@@ -104,10 +104,26 @@ const Navbar = () => {
 
         <div className="social-icons">
           <ul>
-            <li><FaTwitter className="icon" /></li>
-            <li><FaFacebookF className="icon" /></li>
-            <li><FaGooglePlusG className="icon" /></li>
-            <li><FaPinterestP className="icon" /></li>
+            <li>
+              <a href="https://github.com/ElsonOtake/" target="_blank" rel="noreferrer" aria-label="GitHub">
+                <FaGithub className="icon" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/elsonotake" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <FaLinkedinIn className="icon" />
+              </a>
+            </li>
+            <li>
+              <a href="https://wellfound.com/u/elsonotake" target="_blank" rel="noreferrer" aria-label="Wellfound">
+                <FaAngellist className="icon" />
+              </a>
+            </li>
+            <li>
+              <a href="https://medium.com/@elsonotake" target="_blank" rel="noreferrer" aria-label="Medium">
+                <FaMedium className="icon" />
+              </a>
+            </li>
           </ul>
 
           <p>Microverse Copyright 2022</p>
