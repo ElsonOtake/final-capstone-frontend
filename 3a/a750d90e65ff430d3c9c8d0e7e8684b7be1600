@@ -1,0 +1,15 @@
+src/routes/admin/Admin.jsx
+  h_da978aeed56e72 2,4,8-9,13-22,24,28-29,37,41,44-51,54-57,59-61,63-71,96
+  h_da978aeed56e72 52-53,62,93,97-118
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3aa750d90e65ff430d3c9c8d0e7e8684b7be1600",
+  "prompts": {},
+  "humans": {
+    "h_da978aeed56e72": {
+      "author": "Elson Otake <elsonotake@yahoo.com.br>"
+    }
+  }
+}
