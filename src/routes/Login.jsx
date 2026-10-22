@@ -1,92 +1,99 @@
 /* eslint linebreak-style: ["error", "windows"] */
-import { Link } from 'react-router-dom';
-import { useRef, useState } from 'react';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../components/button/Button';
 import './Login.scss';
 import { API_URL } from '../config';
 
 const LoginScreen = () => {
-  const loginForm = useRef();
-  const email = useRef();
-  const password = useRef();
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const [isActive, setActive] = useState(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage('');
+    setIsLoading(true);
 
-  const ToggleClass = () => {
-    setActive(false);
-  };
+    try {
+      const response = await fetch(`${API_URL}/api/v1/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email.trim(),
+          password,
+        }),
+      });
 
-  const sendForm = async () => {
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(
-        {
-          email: email.current.value.trim(),
-          password: password.current.value,
-        },
-      ),
-    };
-
-    const dataResponse = await fetch(`${API_URL}/api/v1/auth/login`, requestOptions);
-    if (dataResponse.ok) {
-      const userData = await dataResponse.json();
-      localStorage.setItem('current_user', JSON.stringify(userData));
-      window.location.href = '/';
-    } else {
-      ToggleClass();
+      if (response.ok) {
+        const userData = await response.json();
+        localStorage.setItem('current_user', JSON.stringify(userData));
+        navigate('/');
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        setErrorMessage(errorData.message || 'Invalid email or password.');
+      }
+    } catch (error) {
+      setErrorMessage('Network error. Please check your connection.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <div className="container page-login">
-
-      <form action="#" className="login-form" method="POST" ref={loginForm}>
+      <form className="login-form" onSubmit={handleSubmit}>
         <h2>LOGIN</h2>
 
         <div className="add-padding-below">
-          <span className={isActive ? 'error-message' : 'error-message active'}>Error with credentials</span>
+          {errorMessage && (
+            <span className="error-message active">{errorMessage}</span>
+          )}
 
           <input
-            ref={email}
             type="email"
             id="email"
             name="email"
             className="form-field"
             placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
+            disabled={isLoading}
           />
         </div>
 
         <div className="add-padding-below">
           <input
-            ref={password}
             type="password"
             id="password"
             name="password"
             className="form-field"
             placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
+            disabled={isLoading}
           />
         </div>
 
         <p className="signin-message">
           Don&apos;t have an account yet?
-          <Link to="/signup">
-            SIGN UP
-          </Link>
+          <Link to="/signup"> SIGN UP</Link>
         </p>
 
         <div className="form-bottom-bar">
           <Button
-            btnAxn={sendForm}
-            label="Login"
+            type="submit"
+            label={isLoading ? 'Logging in...' : 'Login'}
             size="main"
             color="dark"
+            disabled={isLoading}
           />
         </div>
       </form>
-
     </div>
   );
 };
