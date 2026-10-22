@@ -23,8 +23,7 @@ export const decodeTokenPayload = (token) => {
     );
 
     return JSON.parse(jsonPayload);
-  } catch (error) {
-    console.error('Failed to decode JWT payload:', error);
+  } catch {
     return null;
   }
 };
@@ -80,7 +79,6 @@ export const getValidAuthSession = (key = 'current_user') => {
       || (userData.exp ? new Date(userData.exp).getTime() / 1000 : null);
 
     if (isTokenExpired(exp)) {
-      console.warn('Session expired. Purging stored credentials.');
       localStorage.removeItem(key);
       return null;
     }
@@ -88,7 +86,6 @@ export const getValidAuthSession = (key = 'current_user') => {
     // Return authenticated session object
     return userData;
   } catch (error) {
-    console.error('Error reading auth session from localStorage:', error);
     localStorage.removeItem(key);
     return null;
   }

@@ -56,7 +56,6 @@ const getVehicles = () => async (dispatch) => {
       payload: vehicles,
     });
   } catch (error) {
-    console.error('Error fetching vehicles:', error);
     dispatch({
       type: GET_VEHICLES_FAILURE,
       payload: error.message,

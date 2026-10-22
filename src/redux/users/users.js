@@ -54,7 +54,6 @@ const getReservations = () => async (dispatch) => {
       payload: Array.isArray(reservations) ? reservations : [],
     });
   } catch (error) {
-    console.error('Error fetching reservations:', error);
     dispatch({
       type: GET_RESERVATIONS_FAILURE,
       payload: error.message,

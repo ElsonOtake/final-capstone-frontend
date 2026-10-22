@@ -66,8 +66,8 @@ const AdminScreen = () => {
         dispatch(getVehicles());
         navigate('/models');
       }
-    } catch (error) {
-      console.error('Error deleting vehicle:', error);
+    } catch {
+      // Intentionally ignoring network errors on deletion
     }
   };
 
