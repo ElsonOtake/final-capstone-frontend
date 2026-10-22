@@ -1,30 +1,40 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint linebreak-style: ["error", "windows"] */
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Gallery.scss';
 
-const Gallery = (props) => {
-  const { data, btnAxn } = props;
+const Gallery = ({ data, btnAxn }) => (
+  <div className="slider">
+    {data.map((photo, index) => {
+      const photoUrl = photo.photo || photo;
+      const photoKey = photo.id || photoUrl || index;
 
-  return (
-    <div className="slider">
-      {
-        data.map((photo) => (
-          <div
-            key={photo}
-            onClick={() => btnAxn(photo.photo)}
-            style={{ backgroundImage: `url(${photo.photo})` }}
-          />
-        ))
-      }
-    </div>
-  );
-};
+      return (
+        <button
+          type="button"
+          key={photoKey}
+          className="slider-item"
+          onClick={() => btnAxn(photoUrl)}
+          style={{ backgroundImage: `url(${photoUrl})` }}
+          aria-label="View photo"
+        />
+      );
+    })}
+  </div>
+);
 
 Gallery.propTypes = {
   btnAxn: PropTypes.func.isRequired,
-  data: PropTypes.array.isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      photo: PropTypes.string,
+    }),
+  ),
+};
+
+Gallery.defaultProps = {
+  data: [],
 };
 
 export default Gallery;
