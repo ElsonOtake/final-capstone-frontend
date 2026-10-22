@@ -1,0 +1,15 @@
+src/redux/vehicles/vehicles.js
+  h_da978aeed56e72 3,5,7-9,11,14,16-17,23,25-53,55-62,64
+  h_da978aeed56e72 2,54,63
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e70c7687d9a82347fa0379b11ebf3e88ffb11209",
+  "prompts": {},
+  "humans": {
+    "h_da978aeed56e72": {
+      "author": "Elson Otake <elsonotake@yahoo.com.br>"
+    }
+  }
+}
