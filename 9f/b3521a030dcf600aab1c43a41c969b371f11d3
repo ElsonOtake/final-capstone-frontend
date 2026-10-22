@@ -1,0 +1,15 @@
+src/components/form/Form.jsx
+  h_da978aeed56e72 3,6,23,37,63,125,130,139,141,147
+  h_da978aeed56e72 123
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9fb3521a030dcf600aab1c43a41c969b371f11d3",
+  "prompts": {},
+  "humans": {
+    "h_da978aeed56e72": {
+      "author": "Elson Otake <elsonotake@yahoo.com.br>"
+    }
+  }
+}
