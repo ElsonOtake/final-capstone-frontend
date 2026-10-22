@@ -1,0 +1,15 @@
+src/routes/About.jsx
+  h_da978aeed56e72 2-4,6,10,20,37-38,60,68
+  h_da978aeed56e72 55,69-80,87-89
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2510680b6ffc1b9dbaab63c4cd65b07729c36b44",
+  "prompts": {},
+  "humans": {
+    "h_da978aeed56e72": {
+      "author": "Elson Otake <elsonotake@yahoo.com.br>"
+    }
+  }
+}
