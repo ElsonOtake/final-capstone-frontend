@@ -1,0 +1,14 @@
+src/routes/ProtectedRoutes.jsx
+  h_da978aeed56e72 4,7-8,14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b2e7af1a50f608904d50c1f69ada881e10df97cd",
+  "prompts": {},
+  "humans": {
+    "h_da978aeed56e72": {
+      "author": "Elson Otake <elsonotake@yahoo.com.br>"
+    }
+  }
+}
