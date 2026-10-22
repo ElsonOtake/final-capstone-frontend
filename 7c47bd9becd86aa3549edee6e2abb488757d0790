@@ -1,0 +1,14 @@
+src/routes/Signup.jsx
+  h_da978aeed56e72 40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "7c47bd9becd86aa3549edee6e2abb488757d0790",
+  "prompts": {},
+  "humans": {
+    "h_da978aeed56e72": {
+      "author": "Elson Otake <elsonotake@yahoo.com.br>"
+    }
+  }
+}

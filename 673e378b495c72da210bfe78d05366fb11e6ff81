@@ -1,0 +1,15 @@
+src/components/navbar/Navbar.jsx
+  h_da978aeed56e72 9-12,108-110,113-115,118-120,123-125
+  h_da978aeed56e72 107,111-112,116-117,121-122,126
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "673e378b495c72da210bfe78d05366fb11e6ff81",
+  "prompts": {},
+  "humans": {
+    "h_da978aeed56e72": {
+      "author": "Elson Otake <elsonotake@yahoo.com.br>"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+src/components/uploadimages/UploadImages.jsx
+  h_da978aeed56e72 14,38-40,42-44,48-59,71
+  h_da978aeed56e72 45-47
+package-lock.json
+  h_da978aeed56e72 12793-12796,12798-12799
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "1257ab0db4f90899793eb467c84a3f8e426d3b06",
+  "prompts": {},
+  "humans": {
+    "h_da978aeed56e72": {
+      "author": "Elson Otake <elsonotake@yahoo.com.br>"
+    }
+  }
+}
