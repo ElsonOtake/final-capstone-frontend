@@ -3,7 +3,7 @@
 /* eslint-disable no-script-url */
 /* eslint linebreak-style: ["error", "windows"] */
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import {
   FaBars,
   FaMedium,
@@ -14,32 +14,35 @@ import {
 } from 'react-icons/fa';
 import './Navbar.scss';
 import Button from '../button/Button';
+import { getValidAuthSession, clearAuthSession } from '../../utils/auth';
 
 const Navbar = () => {
+  const location = useLocation();
   const [navVisible, setNavVisible] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
 
+  // Re-check authentication state on location (route) changes
   useEffect(() => {
     if (window.innerWidth < 400) {
       setNavVisible(false);
     }
 
-    if (JSON.parse(localStorage.getItem('current_user'))) {
+    const session = getValidAuthSession('current_user');
+
+    if (session && session.token) {
       setIsLoggedIn(true);
-      if (JSON.parse(localStorage.getItem('current_user')).role === 'admin') {
-        setIsAdmin(true);
-      } else {
-        setIsAdmin(false);
-      }
+      setIsAdmin(session.role === 'admin');
     } else {
       setIsLoggedIn(false);
+      setIsAdmin(false);
     }
-  }, []);
+  }, [location]);
+
+  const closeNav = () => setNavVisible(false);
 
   const endSession = () => {
-    window.localStorage.removeItem('current_user');
-    window.location.href = '/login';
+    clearAuthSession('current_user', '/login');
   };
 
   return (
@@ -48,56 +51,52 @@ const Navbar = () => {
         <FaBars className="icon" />
       </div>
       <div className={navVisible ? 'navbar nav-show' : 'navbar nav-hide'}>
-        <div
-          className="closeBtn"
-          onClick={() => setNavVisible(false)}
-        >
+        <div className="closeBtn" onClick={closeNav}>
           <FaTimes className="icon" />
         </div>
 
         <div className="navTop">
-          <Link to="/" className="img-container" onClick={() => setNavVisible(!navVisible)} />
+          <Link to="/" className="img-container" onClick={closeNav} />
 
           <nav>
             <ul>
               <li>
-                <NavLink to="/models" onClick={() => setNavVisible(false)}>
+                <NavLink to="/models" onClick={closeNav}>
                   MODELS
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/reservation" onClick={() => setNavVisible(false)}>
+                <NavLink to="/reservation" onClick={closeNav}>
                   RESERVATIONS
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/booking" onClick={() => setNavVisible(false)}>
+                <NavLink to="/booking" onClick={closeNav}>
                   BOOKING
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/about" onClick={() => setNavVisible(false)}>
+                <NavLink to="/about" onClick={closeNav}>
                   ABOUT
                 </NavLink>
               </li>
               {isAdmin && (
-              <li>
-                <NavLink to="/admin" onClick={() => setNavVisible(false)}>
-                  ADMIN
-                </NavLink>
-              </li>
+                <li>
+                  <NavLink to="/admin" onClick={closeNav}>
+                    ADMIN
+                  </NavLink>
+                </li>
               )}
               {isLoggedIn && (
-              <li className="logout-button">
-                <Button
-                  label="LOGOUT"
-                  size="normal"
-                  color="dark"
-                  btnAxn={endSession}
-                />
-              </li>
+                <li className="logout-button">
+                  <Button
+                    label="LOGOUT"
+                    size="normal"
+                    color="dark"
+                    btnAxn={endSession}
+                  />
+                </li>
               )}
-
             </ul>
           </nav>
         </div>
@@ -105,22 +104,42 @@ const Navbar = () => {
         <div className="social-icons">
           <ul>
             <li>
-              <a href="https://github.com/ElsonOtake/" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <a
+                href="https://github.com/ElsonOtake/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+              >
                 <FaGithub className="icon" />
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/elsonotake" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <a
+                href="https://www.linkedin.com/in/elsonotake"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+              >
                 <FaLinkedinIn className="icon" />
               </a>
             </li>
             <li>
-              <a href="https://wellfound.com/u/elsonotake" target="_blank" rel="noreferrer" aria-label="Wellfound">
+              <a
+                href="https://wellfound.com/u/elsonotake"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Wellfound"
+              >
                 <FaAngellist className="icon" />
               </a>
             </li>
             <li>
-              <a href="https://medium.com/@elsonotake" target="_blank" rel="noreferrer" aria-label="Medium">
+              <a
+                href="https://medium.com/@elsonotake"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Medium"
+              >
                 <FaMedium className="icon" />
               </a>
             </li>

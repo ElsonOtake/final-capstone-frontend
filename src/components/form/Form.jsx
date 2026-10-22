@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint linebreak-style: ["error", "windows"] */
+import React from 'react';
 
 const Form = () => (
-  <fragment>
+  <>
     <div className="grid-display grid-simple">
       <div className="add-margin-below">
         <label htmlFor="brand">Brand</label>
@@ -19,7 +20,7 @@ const Form = () => (
 
     <div className="grid-display grid-double">
       <div className="add-margin-below">
-        <label htmlFor="brand">Model</label>
+        <label htmlFor="model">Model</label>
         <input
           type="text"
           id="model"
@@ -33,7 +34,7 @@ const Form = () => (
       <div className="add-margin-below grid-double">
         <label htmlFor="year">Year</label>
         <input
-          type="text"
+          type="number"
           id="year"
           name="year"
           placeholder="2018"
@@ -59,6 +60,7 @@ const Form = () => (
       <div className="add-margin-below">
         <label htmlFor="color">Color</label>
         <select
+          id="color"
           name="color"
           className="form-field"
           required
@@ -118,13 +120,14 @@ const Form = () => (
       </div>
 
       <div className="add-margin-below">
-        <label htmlFor="price">Price(USD)</label>
+        <label htmlFor="price">Price (USD)</label>
         <input
-          type="text"
+          type="number"
           id="price"
           name="price"
           placeholder="100"
           className="form-field"
+          min="0"
           required
         />
       </div>
@@ -133,13 +136,15 @@ const Form = () => (
     <h3>Description</h3>
 
     <div className="add-margin-below">
+      <label htmlFor="description">Description</label>
       <textarea
+        id="description"
         name="description"
         className="form-field"
         required
       />
     </div>
-  </fragment>
+  </>
 );
 
 export default Form;

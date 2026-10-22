@@ -1,4 +1,5 @@
 /* eslint linebreak-style: ["error", "windows"] */
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   FaArrowCircleRight,
@@ -7,46 +8,67 @@ import {
 } from 'react-icons/fa';
 import './Button.scss';
 
-const Button = (props) => {
-  const {
-    btnAxn,
-    color,
-    iconStart,
-    iconEnd,
-    label,
-    size,
-    value,
-  } = props;
+const ICONS = {
+  calendar: FaCalendarAlt,
+  arrow: FaArrowCircleRight,
+  check: FaCheck,
+};
+
+const Button = ({
+  btnAxn,
+  color,
+  disabled,
+  iconStart,
+  iconEnd,
+  label,
+  size,
+  type,
+  value,
+}) => {
+  const StartIcon = ICONS[iconStart];
+  const EndIcon = ICONS[iconEnd];
+
+  const handleClick = (e) => {
+    if (typeof btnAxn === 'function') {
+      btnAxn(value !== null ? value : e);
+    }
+  };
 
   return (
     <button
-      type="button"
+      // eslint-disable-next-line react/button-has-type
+      type={type}
       className={`${size} color-${color}`}
-      onClick={() => btnAxn(value)}
+      onClick={handleClick}
+      disabled={disabled}
     >
-      {iconStart === 'calendar' && <FaCalendarAlt className="icon icon-start" />}
+      {StartIcon && <StartIcon className="icon icon-start" />}
       {label}
-      {iconEnd === 'arrow' && <FaArrowCircleRight className="icon icon-end" />}
-      {iconEnd === 'check' && <FaCheck className="icon icon-end" />}
+      {EndIcon && <EndIcon className="icon icon-end" />}
     </button>
   );
 };
 
 Button.propTypes = {
-  btnAxn: PropTypes.func.isRequired,
+  btnAxn: PropTypes.func,
   color: PropTypes.string,
+  disabled: PropTypes.bool,
   iconStart: PropTypes.string,
   iconEnd: PropTypes.string,
   label: PropTypes.string.isRequired,
   size: PropTypes.string,
-  value: PropTypes.object,
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
+  value: PropTypes.any,
 };
 
 Button.defaultProps = {
+  btnAxn: null,
   color: 'primary',
+  disabled: false,
   iconStart: null,
   iconEnd: null,
   size: 'normal',
+  type: 'button',
   value: null,
 };
 
