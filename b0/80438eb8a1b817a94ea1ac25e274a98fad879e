@@ -1,0 +1,15 @@
+src/components/uploadimages/UploadImages.jsx
+  h_da978aeed56e72 5,8,12,14,16,18-20,22-26,33-36,39-47,57,62-68,70,72,75-76,80-83,94,98,100,112,118,126-130,137-139,146-147,156-159
+  h_da978aeed56e72 69,71,99,125,131-136,140-145
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b080438eb8a1b817a94ea1ac25e274a98fad879e",
+  "prompts": {},
+  "humans": {
+    "h_da978aeed56e72": {
+      "author": "Elson Otake <elsonotake@yahoo.com.br>"
+    }
+  }
+}
