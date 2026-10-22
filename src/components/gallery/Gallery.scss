@@ -18,18 +18,17 @@
     background-color: transparent;
     padding: 0;
     outline: none;
-    
+
     // Explicit sizing for thumbnail circles (use matching width & height)
     width: 60px;
     height: 60px;
     border-radius: 50%; // Ensures a perfect circle shape
     border: 3px solid $color-white;
-    
+
     // Background properties (image URL is supplied via inline JSX styles)
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    
     display: inline-block;
     cursor: pointer;
     transition: transform $transition, border-color $transition;
