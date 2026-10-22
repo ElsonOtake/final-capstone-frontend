@@ -1,0 +1,15 @@
+src/App.jsx
+  h_da978aeed56e72 2,22,28-30,33-37,43,47,49-50,52,54-56,59,61,65
+  h_da978aeed56e72 32,64,66
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ac2f7308f7d22e77fa9a1552ada7974bd2864af8",
+  "prompts": {},
+  "humans": {
+    "h_da978aeed56e72": {
+      "author": "Elson Otake <elsonotake@yahoo.com.br>"
+    }
+  }
+}
