@@ -1,0 +1,14 @@
+Dockerfile
+  h_da978aeed56e72 1-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c883ddbe0ce777a552aa2fddfc17e59d14d1dc84",
+  "prompts": {},
+  "humans": {
+    "h_da978aeed56e72": {
+      "author": "Elson Otake <elsonotake@yahoo.com.br>"
+    }
+  }
+}
